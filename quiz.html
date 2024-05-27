@@ -93,38 +93,5 @@
             <button type="submit">Submit Answers</button>
         </form>
     </div>
-    <script>
-  
-  function getUrlParams() {
-    const params = {};
-    const queryString = window.location.search.substring(1);
-    const paramPairs = queryString.split('&');
-    paramPairs.forEach(pair => {
-      const [key, value] = pair.split('=');
-      params[key] = decodeURIComponent(value);
-    });
-    return params;
-  }
-
-
-  function displayUserDetails() {
-    const params = getUrlParams();
-    const userDetailsDiv = document.getElementById('userDetails');
-    userDetailsDiv.innerHTML = `
-      <p><strong>Name:</strong> ${params.name}</p>
-      <p><strong>Enroll Number:</strong> ${params.enroll}</p>
-      <p><strong>Batch Number:</strong> ${params.batch}</p>
-    `;
-  }
-
-  document.getElementById('questionsForm').addEventListener('submit', function(event) {
-    event.preventDefault();
-    alert('Answers submitted successfully!');
-  });
-
-  window.onload = function() {
-    displayUserDetails();
-  };
-</script>
 </body>
 </html>
