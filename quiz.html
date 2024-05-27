@@ -9,7 +9,7 @@
 <body>
     <div class="container">
         <h2>Quiz Questions</h2>
-        <form id="quizForm" action="results.html" method="post">
+        <form id="quizForm" action="results.html" method="post" onsubmit="handleFormSubmit(event)">
             <div class="question">
                 <p>1. What is the capital of France?</p>
                 <label><input type="checkbox" name="q1" value="Paris"> Paris</label>
@@ -93,5 +93,12 @@
             <button type="submit">Submit Answers</button>
         </form>
     </div>
+    <script>
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            alert("Form Submitted");
+            document.getElementById('quizForm').submit();
+        }
+    </script>
 </body>
 </html>
